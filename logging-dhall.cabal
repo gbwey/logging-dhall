@@ -1,0 +1,61 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 03008d818aca70a105e79aa8220eb8e4680561d46ebdf131c47611e043ecfcd6
+
+name:           logging-dhall
+version:        0.1.0.0
+category:       Logging
+homepage:       https://github.com/gbwey/logging-dhall#readme
+copyright:      2018 Grant Weyburne
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      LoggingDhall
+  other-modules:
+      Paths_logging_dhall
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wunused-type-patterns -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , dhall >=1.32.0
+    , logging-simple
+    , template-haskell
+    , text
+    , unliftio-core
+  if impl(ghc >= 8.8)
+    ghc-options: -fwrite-ide-info -hiedir=.hie -Widentities
+  default-language: Haskell2010
+
+test-suite logging-dhall-test
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_logging_dhall
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wunused-type-patterns -Wredundant-constraints
+  build-depends:
+      base
+    , dhall >=1.32.0
+    , generic-lens
+    , lens
+    , logging-dhall
+    , logging-simple
+    , tasty
+    , tasty-hunit
+    , template-haskell
+    , text
+    , unliftio-core
+  if impl(ghc >= 8.8)
+    ghc-options: -fwrite-ide-info -hiedir=.hie -Widentities
+  default-language: Haskell2010

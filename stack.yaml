@@ -1,0 +1,11 @@
+resolver: lts-17.0
+
+packages:
+- .
+
+extra-deps:
+- ../logging-simple
+
+ghc-options:
+  "$locals": -fwrite-ide-info
+  "$everything": -haddock

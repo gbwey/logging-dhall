@@ -35,9 +35,6 @@ import qualified Language.Haskell.TH as TH
 import qualified Language.Haskell.TH.Syntax as TH
 import Logging
 
-deriving instance FromDhall PoolStrategy
-deriving instance ToDhall PoolStrategy
-
 deriving instance FromDhall LLog
 deriving instance ToDhall LLog
 
